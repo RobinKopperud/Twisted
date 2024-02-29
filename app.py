@@ -25,14 +25,14 @@ def generate_response_with_chatgpt(input_text, tone):
     client = OpenAI(api_key=api_key)
 
     # Prepare messages payload including conversation history
-    messages = []
+    messages = [{"role": "system", "content": f"This conversation is intended to be {tone}."}]
     for i, msg in enumerate(st.session_state['messages']):
         # Alternate roles for messages based on their order
         role = "assistant" if i % 2 else "user"
         messages.append({"role": role, "content": msg})
     
     # Add the current user's message
-    messages.append({"role": "user", "content": f"Write a really {tone} response to our messages and: '{input_text}'"})
+    messages.append({"role": "user", "content": input_text})
 
     print("Messages Payload:", messages)
 
