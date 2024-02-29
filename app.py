@@ -71,7 +71,7 @@ if 'mood' not in st.session_state or st.session_state['mood'] == '':
 
     mood_setter = st.text_input("How do you feel?", key="mood_setter")
     if st.button("Set Mood"):
-        st.balloons()
+        #st.balloons()
         conversation_tone, compound_score = get_sentiment(mood_setter)
         st.session_state['mood'] = conversation_tone
         st.success(f"Mood set to {conversation_tone}.")
