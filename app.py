@@ -5,7 +5,7 @@ import openai
 from openai import OpenAI
 
 # Initialize the Sentiment Analyzer and download necessary data
-#nltk.download('vader_lexicon', quiet=True)
+nltk.download('vader_lexicon', quiet=True)
 sia = SentimentIntensityAnalyzer()
 
 # Securely set your OpenAI API key
