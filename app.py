@@ -40,7 +40,7 @@ def generate_response_with_chatgpt(input_text, tone):
     chat_completion = client.chat.completions.create(
         model="gpt-3.5-turbo-1106",
         messages=messages,
-        temperature=0.2
+        temperature=0.3
     )
     
     # Extract and return the generated response
