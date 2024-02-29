@@ -9,7 +9,7 @@ nltk.download('vader_lexicon', quiet=True)
 sia = SentimentIntensityAnalyzer()
 
 # Securely set your OpenAI API key
-api_key = "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"  # Use st.secrets in production
+api_key = st.secrets["openai_api_key"]
 
 def get_sentiment(text):
     scores = sia.polarity_scores(text)
