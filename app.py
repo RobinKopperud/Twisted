@@ -25,7 +25,7 @@ def generate_response_with_chatgpt(input_text, tone):
     client = OpenAI(api_key=api_key)
 
     # Prepare messages payload including conversation history
-    messages = [{"role": "system", "content": f"This conversation is intended to be {tone}."}]
+    messages = [{"role": "system", "content": f"This conversation is intended to be really {tone}."}]
     for i, msg in enumerate(st.session_state['messages']):
         # Alternate roles for messages based on their order
         role = "assistant" if i % 2 else "user"
@@ -38,9 +38,9 @@ def generate_response_with_chatgpt(input_text, tone):
 
     # Request a chat completion using the specified method and model
     chat_completion = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4-0613",
         messages=messages,
-        temperature=0.3
+        temperature=0.5
     )
     
     # Extract and return the generated response
