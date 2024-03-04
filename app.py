@@ -40,7 +40,7 @@ def generate_response_with_chatgpt(input_text, tone):
     chat_completion = client.chat.completions.create(
         model="gpt-4-0613",
         messages=messages,
-        temperature=0.5
+        temperature=0.8
     )
     
     # Extract and return the generated response
@@ -65,7 +65,7 @@ if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
 # UI for setting the mood
-st.title("Twisted Chatbot")
+st.title("Twisted Chatbot V2")
 st.caption("This is a tweaked chatbot that uses the OpenAI Chat API. The user sets the mood of the conversation and the AI responds in the selected mood. Set the mood and try to get a respond up to 5 times, to continue the conversation, type in the textbox above RESPOND ")
 if 'mood' not in st.session_state or st.session_state['mood'] == '':
 
